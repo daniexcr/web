@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos de Pago</title>
+    <link rel="stylesheet" href="metodo_de_pago.css">
+</head>
+<body>
+   
+    <!-- Header con el icono para abrir el sidebar -->
+    <header>
+        <nav>
+            <div class="main-header">
+                <div class="dropdown-bar">
+                    <img src="img principal/barra.png" alt="Menu Icon" class="nav-icon" id="menu-icon">
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="search-container">
+                    <a href="#" class="search-link">¿Qué buscas hoy?</a>
+                 
+                     
+                       
+                      
+                        
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-trigger">Message</a>
+                    <div class="dropdown-content-horizontal">
+                        <a href="https://facebook.com" target="_blank">
+                            <img src="img principal/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://twitter.com" target="_blank">
+                            <img src="img principal/x.png" alt="Twitter">
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="img principal/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://linkedin.com" target="_blank">
+                            <img src="img principal/whatsapp.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://telegram.com" target="_blank">
+                            <img src="img principal/telegram.png" alt="Telegram">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="sesion/login.html"><button class="login-btn">Log in</button></a>
+                <a href="sesion/signup.html"><button class="signup-btn">Sign up</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar-menu">
+        <div class="user-info">
+            <img src="img principal/sesion.png" alt="User Icon" class="profile-icon">
+            <span>Admin</span>
+            <p href="sesion/login.html">Iniciar Sesión</p>
+        </div>
+        <ul class="menu-options">
+            <li><a href="#"><i class="icon-home"></i>Home</a></li>
+            <li class="dropdown-productos">
+                <a href="#"><i class="icon-productos"></i>Productos</a>
+                <!-- Submenú para Productos -->
+                <ul class="submenu">
+                    <li><a href="contenido/Tarjetas Gráficas.html">Tarjetas Gráficas</a></li>
+                    <li><a href="contenido/Placas Madre.html">Placas Madre</a></li>
+                    <li><a href="contenido/Procesadores & Accesorios.html">Procesadores & Accesorios</a></li>
+                    <li><a href="contenido/Almacenamiento.html">Almacenamiento</a></li>
+                    <li><a href="contenido/Case & Fuentes.html">Case & Fuentes</a></li>
+                    <li><a href="contenido/Memorias Ram.html">Memorias Ram</a></li>
+                    <li><a href="contenido/Sistema de Refrigeracion.html">Sistema de Refrigeración</a></li>
+                    <li><a href="contenido/Grabadoras Pc.html">Grabadoras Pc</a></li>
+                    <li><a href="contenido/Estabilizadores -UPS- Supresor.html">Estabilizadores -UPS- Supresor</a></li>
+                    <li><a href="contenido/Accesorios para Pc.html">Accesorios para Pc</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="icon-ofertas"></i>Ofertas</a></li>
+            <li><a href="calculadora/calculadora.html"><i class="icon-ordenes"></i>Calculadora</a></li>
+            <li><a href="metodo_de_pago.html"><i class="icon-reportes"></i>Metodos de Pago</a></li>
+            <li><a href="#"><i class="icon-ajustes"></i>Ajustes</a></li>
+        </ul>
+        <div class="logout">
+            <a href="#"><i class="icon-logout"></i></a>
+        </div>
+    </div>
+    
+    
+        <!-- Formas de pago con espacio adecuado debajo del header -->
+        <div class="formas-de-pago">
+            FORMAS DE PAGO
+        </div>
+    
+        <!-- Contenedor de imágenes y botones -->
+        <div class="image-container">
+            <div class="square-container">
+                <div class="image-item square">
+                    <img src="img principal/QR-Yape-Plin.jpg" alt="Imagen Cuadrada" class="image">
+                </div>
+            </div>
+    
+            <div class="long-images-container">
+                <div class="image-item">
+                    <img src="img principal/BANCO NACION.jpg" alt="Banco Nacional" class="image">
+                </div>
+    
+                <div class="image-item">
+                    <img src="img principal/BCP SOLES.jpg" alt="BCP" class="image">
+                </div>
+    
+                <div class="image-item">
+                    <img src="img principal/BBVA SOLES.jpg" alt="BBVA" class="image">
+                </div>
+    
+                <div class="image-item">
+                    <img src="img principal/INTERBANK SOLES.jpg" alt="Interbank" class="image">
+                </div>
+            </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

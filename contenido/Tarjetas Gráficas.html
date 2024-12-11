@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas Gráficas</title>
+    <link rel="stylesheet" href="css/Tarjetas Gráficas.css">
+
+</head>
+<body>
+    
+   <!-- Header con el icono para abrir el sidebar -->
+   <header>
+    <nav>
+        <div class="main-header">
+            <div class="dropdown-bar">
+                <img src="../img principal/barra.png" alt="Menu Icon" class="nav-icon" id="menu-icon">
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html" class="active">Home</a></li>
+            <li class="search-container">
+                <a href="#" class="search-link">¿Qué buscas hoy?</a>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar..." oninput="searchProducts()">
+                    <button type="submit" id="search-btn">
+                        <img src="../img principal/buscador.png" alt="Buscar"> <!-- Asegúrate de tener un ícono de búsqueda -->
+                    </button>
+                    <ul id="search-results" class="search-results"></ul> <!-- Lista de productos encontrados -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-trigger">Message</a>
+                <div class="dropdown-content-horizontal">
+                    <a href="https://facebook.com" target="_blank">
+                        <img src="../img principal/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <img src="../img principal/x.png" alt="Twitter">
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                        <img src="../img principal/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank">
+                        <img src="../img principal/whatsapp.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://telegram.com" target="_blank">
+                        <img src="../img principal/telegram.png" alt="Telegram">
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="../sesion/login.html"><button class="login-btn">Log in</button></a>
+            <a href="../sesion/signup.html"><button class="signup-btn">Sign up</button></a>
+            <div class="cart-header" id="header-cart">
+                <img src="../img principal/carrito.png" alt="Cart Icon" class="header-cart-icon">
+            </div>
+        </div>
+        
+        <!-- Ventana emergente del carrito -->
+        <div id="cart-popup" class="cart-popup hidden">
+            <div class="cart-popup-content">
+                <span class="close-cart" id="close-cart">&times;</span>
+                <h2>Carrito de Compras</h2>
+                <ul id="cart-items">
+                    <!-- Aquí se mostrarán los productos -->
+                </ul>
+                <div class="cart-total">
+                    <p><strong>Total:</strong> <span id="cart-total-price">S/ 0.00</span></p>
+                </div>
+                <a href="pagos.html" class="checkout-btn" id="checkout-btn">Comprar</a>
+
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="sidebar" id="sidebar-menu">
+        <div class="user-info">
+            <img src="../img principal/sesion.png" alt="User Icon" class="profile-icon">
+            <span>Admin</span>
+            <p>Cerrar Sesión</p>
+        </div>
+        <ul class="menu-options">
+            <li><a href="../index.html">Home</a></li>
+            <li class="dropdown-productos">
+                <a href="#">Productos</a>
+                <ul class="submenu">
+                    <li><a href="../contenido/Tarjetas Gráficas.html">Tarjetas Gráficas</a></li>
+                    <li><a href="../contenido/Placas Madre.html">Placas Madre</a></li>
+                    <li><a href="contenido/Procesadores & Accesorios.html">Procesadores & Accesorios</a></li>
+                    <li><a href="contenido/Almacenamiento.html">Almacenamiento</a></li>
+                    <li><a href="contenido/Case & Fuentes.html">Case & Fuentes</a></li>
+                    <li><a href="contenido/Memorias Ram.html">Memorias Ram</a></li>
+                    <li><a href="contenido/Sistema de Refrigeracion.html">Sistema de Refrigeración</a></li>
+                    <li><a href="contenido/Grabadoras Pc.html">Grabadoras Pc</a></li>
+                    <li><a href="contenido/Estabilizadores -UPS- Supresor.html">Estabilizadores -UPS- Supresor</a></li>
+                    <li><a href="contenido/Accesorios para Pc.html">Accesorios para Pc</a></li>
+                </ul>
+            </li>
+            <li><a href="../ofertas.html"><i class="icon-ofertas"></i>Ofertas</a></li>
+            <li><a href="../calculadora/calculadora.html"><i class="icon-ordenes"></i>Calculadora</a></li>
+            <li><a href="../metodo_de_pago.html"><i class="icon-reportes"></i>Metodos de Pago</a></li>
+            <li><a href="#"><i class="icon-ajustes"></i>Ajustes</a></li>
+        </ul>
+        <div class="logout">
+            <a href="#"><i class="icon-logout"></i></a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Contenido Principal -->
+        <main>
+            <!-- Sección de Imágenes Principales (Hero) -->
+            <section class="hero-section">
+                <div class="graphics-section">
+                    <div class="graphic-card">
+                        <img src="img/rtx3080ti.jpg" alt="Tarjeta Gráfica NVIDIA">
+                        <div class="graphic-info">
+                            <img src="img/logo nvidia.jpg" alt="NVIDIA Logo" class="logo">
+                            <span>GEFORCE RTX</span>
+                        </div>
+                    </div>
+                    <div class="graphic-card">
+                        <img src="img/amd-radeon.jpg" alt="Tarjeta Gráfica AMD">
+                        <div class="graphic-info">
+                            <img src="img/logo amd.jpg" alt="AMD Logo" class="logo">
+                            <span>RADEON GRAPHICS</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Productos -->
+            <section class="product-list">
+                <h2>Tarjetas Gráficas</h2>
+                
+                <!-- Barra de filtros y opciones -->
+                <div class="filter-bar">
+                    
+                    <div class="product-info">
+                        <span>Hay 12 productos</span>
+                        <select class="sort-dropdown">
+                            <option value="relevance">Relevancia</option>
+                            <option value="price_low_high">Precio: Menor a Mayor</option>
+                            <option value="price_high_low">Precio: Mayor a Menor</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Lista de productos -->
+                <div class="products-grid">
+                    <!-- Producto 1 -->
+                    <div class="product-item">
+                        <img src="img/rtx4070.png" alt="MSI GeForce RTX 4070" class="main-image">
+                        <img src="img/4070.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>MSI GEFORCE RTX 4070 SUPER 12GB GDDR6X VENTUS 2X</h3>
+                            <p>Stock: 0 Artículo<br>Marca: MSI</p>
+                            
+                            <p class="price">$745.00 (S/ 2,838.45)</p>
+                            <!-- Botón de comprar -->
+                            <button class="buy-btn">Comprar</button>
+                        </div>
+                    </div>
+                
+                    <!-- Producto 2 -->
+                    <div class="product-item">
+                        <img src="img/4070ti.png" alt="ASUS GeForce RTX 4070">
+                        <img src="img/4070ti2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>ASUS GEFORCE RTX 4070Ti 16GB GDDR6 TUF GAMING</h3>
+                            <p>Stock: 0 Artículo<br>Marca: ASUS</p>
+                           
+                                <p class="price">$1,050.00 (S/ 4,000.50)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+                  
+                
+                    <!-- Producto 3 -->
+                    <div class="product-item">
+                        <img src="img/4060.png" alt="MSI GeForce RTX 4060Ti">
+                        <img src="img/4060 2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>MSI GEFORCE RTX 4060Ti 16GB GDDR6 GAMING X 　 　</h3>
+                            <p>Stock: 1 Artículo<br>Marca: MSI</p>
+                        
+                                <p class="price">$630.00 (S/ 2,400.30)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+                   
+                
+                    <!-- Producto 4 -->
+                    <div class="product-item">
+                        <img src="img/soporte.png" alt="ASUS ROG Herculex">
+                        <img src="img/soporte2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>ASUS ROG HERCULX XH01 3D ARGB BLACK SOPORTE</h3>
+                            <p>Stock: 1 Artículo<br>Marca: ASUS</p>
+                           
+                                <p class="price">$50.00 (S/ 190.50)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+                    
+                
+                    <!-- Producto 5 -->
+                    <div class="product-item">
+                        <img src="img/4080super.png" alt="MSI GeForce RTX 4070" class="main-image">
+                        <img src="img/4080super2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>MSI GEFORCE RTX 4080 SUPER 16GB GDDR6X 256BITS SUPRIM X (PN:912-V511-248)</h3>
+                            <p>Stock: 0 Artículo<br>Marca: MSI</p>
+                           
+                                <p class="price">$1,475.00 (S/ 5,619.75)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+                    
+                
+                    <!-- Producto 6 -->
+                    <div class="product-item">
+                        <img src="img/4070ti.png" alt="ASUS GeForce RTX 4070">
+                        <img src="img/4070ti2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>MSI GEFORCE RTX 4070 SUPER 12GB GDDR6X 192BITS VENTUS 2X OC (PN:912-V513-829)</h3>
+                            <p>Stock: 1 Artículo<br>Marca: MSI</p>
+                           
+                                <p class="price">$765.00 (S/ 2,914.65)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+             
+                
+                    <!-- Producto 7 -->
+                    <div class="product-item">
+                        <img src="img/4060.png" alt="MSI GeForce RTX 4060Ti">
+                        <img src="img/4060 2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>MSI GEFORCE RTX 4070 SUPER 12GB GDDR6X 192BITS VENTUS 3X OC (PN:912-V513-827)</h3>
+                            <p>Stock: 1 Artículo<br>Marca: MSI</p>
+            
+                                <p class="price">$790.00 (S/ 3,009.90)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+              
+                
+                    <!-- Producto 8 -->
+                    <div class="product-item">
+                        <img src="img/soporte.png" alt="ASUS ROG Herculex">
+                        <img src="img/soporte2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>PNY NVIDIA QUADRO RTX A4000 ADA GENERATION 20GB GDDR6 160BITS (PN:VCNRTXA4000ADA-PB)</h3>
+                            <p>Stock: 1 Artículo<br>Marca: PNY</p>
+                    
+                                <p class="price">$2,050.00 (S/ 7,810.50)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+                 
+                
+                    <!-- Producto 9 -->
+                    <div class="product-item">
+                        <img src="img/rtx4070.png" alt="MSI GeForce RTX 4070" class="main-image">
+                        <img src="img/4070.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>ASUS GEFORCE RTX 4060Ti 8GB GDDR6 128BITS DUAL OC EDITION (PN:90YV0J49-M0AA00A)</h3>
+                            <p>Stock: 0 Artículo<br>Marca: ASUS</p>
+                      
+                                <p class="price">$490.00 (S/ 1,866.90)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+                
+                
+                    <!-- Producto 10 -->
+                    <div class="product-item">
+                        <img src="img/4070ti.png" alt="ASUS GeForce RTX 4070">
+                        <img src="img/4070ti2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>MSI GEFORCE RTX 3050 6GB GDDR6 96BITS LOW PROFILE OC (PN:912-V812-023)</h3>
+                            <p>Stock: 0 Artículo<br>Marca: MSI</p>
+                  
+                                <p class="price">$205.00 (S/ 781.05)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+           
+                
+                    <!-- Producto 11 -->
+                    <div class="product-item">
+                        <img src="img/4060.png" alt="MSI GeForce RTX 4060Ti">
+                        <img src="img/4060 2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>MSI GEFORCE RTX 4060Ti 8GB GDDR6 128BITS GAMING X (PN:912-V515-069)</h3>
+                            <p>Stock: 0 Artículo<br>Marca: MSI</p>
+                  
+                                <p class="price">$505.00 (S/ 1,924.05)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+          
+                
+                    <!-- Producto 12 -->
+                    <div class="product-item">
+                        <img src="img/soporte.png" alt="ASUS ROG Herculex">
+                        <img src="img/soporte2.png" alt="MSI GeForce RTX 4070 en hover" class="hover-image">
+                        <div class="product-details">
+                            <h3>ASUS GEFORCE RTX 3050 6GB GDDR6 96BITS DUAL OC EDITION (PN:90YV0K60-M0AA00)</h3>
+                            <p>Stock: 1 Artículo<br>Marca: ASUS</p>
+                      
+                                <p class="price">$216.00 (S/ 822.96)</p>
+                                <button class="buy-btn">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/scripts.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

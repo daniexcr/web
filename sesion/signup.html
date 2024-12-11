@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Crear cuenta</h1>
+        <img src="img/logo.png" alt="Logo" class="logo-img"> <!-- Logo aquí -->
+
+        <p class="welcome-text">¿Eres nuevo en CR'S?</p>
+        <p class="instructions">Regístrate y disfruta de nuestros beneficios y una experiencia de compra más rápida y sencilla.</p>
+
+        <form>
+            <div class="input-container">
+                <input type="text" placeholder="Nombre*" required>
+            </div>
+
+            <div class="input-container">
+                <input type="text" placeholder="Apellido*" required>
+            </div>
+
+            <div class="input-container">
+                <input type="text" placeholder="DNI*" required>
+            </div>
+
+            <div class="input-container">
+                <input type="tel" placeholder="Teléfono*" required>
+            </div>
+
+            <div class="input-container">
+                <input type="email" placeholder="Correo*" required>
+            </div>
+
+            <div class="input-container">
+                <input type="password" placeholder="Crea tu contraseña*" required>
+                <span class="toggle-password">👁️</span>
+            </div>
+
+            <div class="terms">
+                <label><input type="checkbox" required> Autorizo los fines adicionales, de tratamiento de mis datos</label>
+                <label><input type="checkbox" required> He leído y acepto los <a href="#">términos y condiciones</a> y <a href="#">política de privacidad</a></label>
+            </div>
+
+            <button type="submit" class="main-btn">Crear cuenta</button>
+
+            <p class="login-link">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Iniciar sesión</h1>
+        <img src="img/logo.png" alt="Logo" class="logo-img"> <!-- Logo de la compañía -->
+
+        <p class="welcome-text">¡Bienvenido a CR´S TECHNOLOGY</p>
+        <p class="instructions">Ingresa tu usuario y contraseña para iniciar sesión</p>
+
+        <form>
+            <div class="input-container">
+                <input type="text" placeholder="Correo o DNI*" required>
+            </div>
+
+            <div class="input-container">
+                <input type="password" placeholder="Contraseña*" required>
+                <span class="toggle-password">👁️</span>
+            </div>
+
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+            <button type="submit" class="main-btn">Iniciar sesión</button>
+
+            <div class="social-login">
+                <button type="button" class="social-btn google">
+                    <img src="img/google.png" alt="Google" class="social-icon"> Iniciar sesión con Google
+                </button>
+                <button type="button" class="social-btn facebook">
+                    <img src="img/facebook.png" alt="Facebook" class="social-icon"> Iniciar sesión con Facebook
+                </button>
+                <button type="button" class="social-btn twitter">
+                    <img src="img/x.png" alt="Twitter" class="social-icon"> Iniciar sesión con X
+                </button>
+                <button type="button" class="social-btn apple">
+                    <img src="img/apple.png" alt="Apple" class="social-icon"> Iniciar sesión con Apple
+                </button>
+            </div>
+
+            <p class="signup-link">¿Eres nuevo en CR'S? <a href="signup.html">Crear cuenta</a></p>
+        </form>
+    </div>
+</body>
+</html>

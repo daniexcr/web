@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Componentes de PC</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlaza el archivo CSS -->
+</head>
+<body>
+
+    <a href="../index.html">Regresar</a>
+
+    <div class="container">
+        <img src="../img principal/LOGO CR'S.png" alt="Logo" class="logo" onclick="resetCalculator()">
+        <h2>Calculadora de Componentes de PC</h2>
+
+        <div class="component">
+            <label for="cpu">Procesador:</label>
+            <select id="cpu" onchange="calculateTotal()">
+                <option value="0">Seleccione un procesador</option>
+                <option value="600">Intel Core i3 - S/ 600</option>
+                <option value="700">Intel Core i5-10400 - S/ 700</option>
+                <option value="800">Intel Core i5-11400 - S/ 800</option>
+                <option value="1000">Intel Core i7-10700 - S/ 1000</option>
+                <option value="1100">Intel Core i7-11700 - S/ 1100</option>
+                <option value="1300">Intel Core i9-10900 - S/ 1300</option>
+                <option value="1400">Intel Core i9-11900 - S/ 1400</option>
+                <option value="800">AMD Ryzen 5 3600 - S/ 800</option>
+                <option value="900">AMD Ryzen 5 5600X - S/ 900</option>
+                <option value="1000">AMD Ryzen 7 3700X - S/ 1000</option>
+                <option value="1100">AMD Ryzen 7 5800X - S/ 1100</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <label for="gpu">Tarjeta Gráfica:</label>
+            <select id="gpu" onchange="calculateTotal()">
+                <option value="0">Seleccione una tarjeta gráfica</option>
+                <option value="900">NVIDIA GeForce GTX 1660 - S/ 900</option>
+                <option value="1500">NVIDIA GeForce RTX 3060 - S/ 1500</option>
+                <option value="1200">AMD Radeon RX 5600 - S/ 1200</option>
+                <option value="1800">AMD Radeon RX 6700 - S/ 1800</option>
+                <option value="2000">NVIDIA GeForce RTX 3070 - S/ 2000</option>
+                <option value="2500">NVIDIA GeForce RTX 3080 - S/ 2500</option>
+                <option value="3000">NVIDIA GeForce RTX 3090 - S/ 3000</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <label for="motherboard">Placa Base:</label>
+            <select id="motherboard" onchange="calculateTotal()">
+                <option value="0">Seleccione una placa base</option>
+                <option value="300">ASUS ROG Strix B550-F - S/ 300</option>
+                <option value="350">MSI B450 TOMAHAWK - S/ 350</option>
+                <option value="400">Gigabyte AORUS X570 - S/ 400</option>
+                <option value="450">ASRock B550 Steel Legend - S/ 450</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <label for="ram">RAM:</label>
+            <select id="ram" onchange="calculateTotal()">
+                <option value="0">Seleccione la memoria RAM</option>
+                <option value="150">Corsair Vengeance LPX 16GB - S/ 150</option>
+                <option value="200">G.Skill Ripjaws V 16GB - S/ 200</option>
+                <option value="250">HyperX Fury 16GB - S/ 250</option>
+                <option value="300">Crucial Ballistix 32GB - S/ 300</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <label for="storage">Almacenamiento:</label>
+            <select id="storage" onchange="calculateTotal()">
+                <option value="0">Seleccione un almacenamiento</option>
+                <option value="100">SSD 240GB - S/ 100</option>
+                <option value="200">SSD 480GB - S/ 200</option>
+                <option value="300">HDD 1TB - S/ 300</option>
+                <option value="400">HDD 2TB - S/ 400</option>
+                <option value="500">SSD NVMe 1TB - S/ 500</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <label for="powerSupply">Fuente de Poder:</label>
+            <select id="powerSupply" onchange="calculateTotal()">
+                <option value="0">Seleccione una fuente de poder</option>
+                <option value="200">Fuente 500W Bronce - S/ 200</option>
+                <option value="300">Fuente 600W Plata - S/ 300</option>
+                <option value="400">Fuente 700W Oro - S/ 400</option>
+                <option value="500">Fuente 800W Platino - S/ 500</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <label for="case">Case:</label>
+            <select id="case" onchange="calculateTotal()">
+                <option value="0">Seleccione un case</option>
+                <option value="150">NZXT H510 - S/ 150</option>
+                <option value="250">Thermaltake V200 - S/ 250</option>
+                <option value="300">Cooler Master MasterBox Q300L - S/ 300</option>
+            </select>
+        </div>
+
+        <div class="total" id="total">Total: S/ 0</div>
+
+        <div class="button-group">
+            <button onclick="buy()">Comprar</button>
+        </div>
+    </div>
+
+    <div class="cart" id="cart" onclick="toggleCart()">
+        <span id="cartCount">0</span>
+        🛒
+    </div>
+
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <p id="cartDetails"></p>
+            <p id="cartTotal"></p>
+            <p><a href="../pagos.html">Métodos de Pago</a></p>
+        </div>
+    </div>
+
+    <script>
+        let itemCount = 0;
+        let cartItems = [];
+
+        function calculateTotal() {
+            const cpu = parseFloat(document.getElementById('cpu').value) || 0;
+            const gpu = parseFloat(document.getElementById('gpu').value) || 0;
+            const motherboard = parseFloat(document.getElementById('motherboard').value) || 0;
+            const ram = parseFloat(document.getElementById('ram').value) || 0;
+            const storage = parseFloat(document.getElementById('storage').value) || 0;
+            const powerSupply = parseFloat(document.getElementById('powerSupply').value) || 0;
+            const caseComponent = parseFloat(document.getElementById('case').value) || 0;
+
+            const total = cpu + gpu + motherboard + ram + storage + powerSupply + caseComponent;
+
+            document.getElementById('total').textContent = 'Total: S/ ' + total.toFixed(2);
+        }
+
+        function buy() {
+            const cpu = document.getElementById('cpu').options[document.getElementById('cpu').selectedIndex].text;
+            const gpu = document.getElementById('gpu').options[document.getElementById('gpu').selectedIndex].text;
+            const motherboard = document.getElementById('motherboard').options[document.getElementById('motherboard').selectedIndex].text;
+            const ram = document.getElementById('ram').options[document.getElementById('ram').selectedIndex].text;
+            const storage = document.getElementById('storage').options[document.getElementById('storage').selectedIndex].text;
+            const powerSupply = document.getElementById('powerSupply').options[document.getElementById('powerSupply').selectedIndex].text;
+            const caseComponent = document.getElementById('case').options[document.getElementById('case').selectedIndex].text;
+
+            const selectedItems = [
+                { name: cpu, price: parseFloat(cpu.split(' - S/ ')[1]) },
+                { name: gpu, price: parseFloat(gpu.split(' - S/ ')[1]) },
+                { name: motherboard, price: parseFloat(motherboard.split(' - S/ ')[1]) },
+                { name: ram, price: parseFloat(ram.split(' - S/ ')[1]) },
+                { name: storage, price: parseFloat(storage.split(' - S/ ')[1]) },
+                { name: powerSupply, price: parseFloat(powerSupply.split(' - S/ ')[1]) },
+                { name: caseComponent, price: parseFloat(caseComponent.split(' - S/ ')[1]) }
+            ];
+
+            selectedItems.forEach(item => {
+                if (item.price > 0) {
+                    cartItems.push(item);
+                }
+            });
+
+            itemCount = cartItems.length;
+            document.getElementById('cartCount').textContent = itemCount;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartDetails = cartItems.map((item, index) => 
+                `${item.name} <span onclick="removeItem(${index})" style="color:red; cursor:pointer;">x</span>`
+            ).join('<br>');
+            const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+
+            document.getElementById('cartDetails').innerHTML = cartDetails;
+            document.getElementById('cartTotal').textContent = 'Total: S/ ' + total.toFixed(2);
+            document.getElementById('cartModal').style.display = 'block';
+        }
+
+        function toggleCart() {
+            document.getElementById('cartModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        function removeItem(index) {
+            cartItems.splice(index, 1);
+            updateCart();
+        }
+
+        function resetCalculator() {
+            document.getElementById('cpu').selectedIndex = 0;
+            document.getElementById('gpu').selectedIndex = 0;
+            document.getElementById('motherboard').selectedIndex = 0;
+            document.getElementById('ram').selectedIndex = 0;
+            document.getElementById('storage').selectedIndex = 0;
+            document.getElementById('powerSupply').selectedIndex = 0;
+            document.getElementById('case').selectedIndex = 0;
+            document.getElementById('total').textContent = 'Total: S/ 0';
+            cartItems = [];
+            itemCount = 0;
+            document.getElementById('cartCount').textContent = itemCount;
+            closeModal();
+        }
+    </script>
+
+</body>
+</html>

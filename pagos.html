@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f8fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 6px;
+        }
+
+        .input-group input:focus {
+            border-color: #3a87ad;
+            outline: none;
+        }
+
+        .logos-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .logos-container img {
+            width: 80px;  /* Ajustado el tamaño de las imágenes para que sean del mismo tamaño */
+            height: auto;
+            object-fit: contain; /* Mantiene las proporciones y evita distorsiones */
+        }
+
+        .total {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        .qr-code {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Pago</h2>
+        
+        <!-- Formulario de pago -->
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="cardNumber">Número de tarjeta</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="#### #### #### ####" required>
+            </div>
+
+            <div class="input-group">
+                <label for="cardHolder">Titular de la tarjeta</label>
+                <input type="text" id="cardHolder" name="cardHolder" placeholder="Nombre en la tarjeta" required>
+            </div>
+
+            <div class="input-group">
+                <label for="expiryDate">Fecha de expiración (MM/AA)</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA" required>
+            </div>
+
+            <div class="input-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="###" required>
+            </div>
+
+            <!-- Logos de los bancos -->
+            <div class="logos-container">
+                <img src="img principal/bpc.png" alt="Banco 1">
+                <img src="img principal/bbva.png" alt="Banco 2">
+                <img src="img principal/interbank.png" alt="Banco 3">
+            </div>
+
+            <!-- Total -->
+            <div class="total">
+                <span>Total:</span>
+                <span>$100.00</span>
+            </div>
+
+            <!-- Botón de pago -->
+            <button type="submit" class="btn">Pagar</button>
+        </form>
+
+        <!-- Código QR -->
+        <div class="qr-code">
+            <img src="img principal/yape.jpg" alt="Código QR">
+        </div>
+
+        <!-- Texto de pie de página -->
+        <div class="footer-text">
+            <p>Recuerda que puedes pagar con las tarjetas de los bancos mencionados.</p>
+        </div>
+    </div>
+    <script>
+        // Recupera el total almacenado en localStorage
+        const total = localStorage.getItem('cartTotal');
+    
+        // Verifica si el total existe
+        if (total) {
+            // Actualiza el contenido del total en la página
+            document.querySelector('.total span:last-child').textContent = total;
+        } else {
+            // Si no hay total almacenado, muestra $0.00 como valor predeterminado
+            document.querySelector('.total span:last-child').textContent = '$0.00';
+        }
+    </script>
+    
+    
+</body>
+</html>

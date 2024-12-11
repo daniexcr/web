@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiden Shogun Page</title>
+    <link rel="stylesheet" href="ofertas.css">
+    
+</head>
+<body>
+
+    <!-- Header con el icono para abrir el sidebar -->
+    <header>
+        <nav>
+            <div class="main-header">
+                <div class="dropdown-bar">
+                    <img src="img principal/barra.png" alt="Menu Icon" class="nav-icon" id="menu-icon">
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="search-container">
+                    <a href="#" class="search-link">¿Qué buscas hoy?</a>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Buscar..." oninput="searchProducts()">
+                        <button type="submit" id="search-btn">
+                            <img src="img principal/buscador.png" alt="Buscar"> <!-- Asegúrate de tener un ícono de búsqueda -->
+                        </button>
+                        <ul id="search-results" class="search-results"></ul> <!-- Lista de productos encontrados -->
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-trigger">Message</a>
+                    <div class="dropdown-content-horizontal">
+                        <a href="https://facebook.com" target="_blank">
+                            <img src="img principal/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://twitter.com" target="_blank">
+                            <img src="img principal/x.png" alt="Twitter">
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="img principal/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://linkedin.com" target="_blank">
+                            <img src="img principal/whatsapp.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://telegram.com" target="_blank">
+                            <img src="img principal/telegram.png" alt="Telegram">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="sesion/login.html"><button class="login-btn">Log in</button></a>
+                <a href="sesion/signup.html"><button class="signup-btn">Sign up</button></a>
+                <div class="cart-header" id="header-cart">
+                    <img src="img principal/carrito.png" alt="Cart Icon" class="header-cart-icon">
+                </div>
+            </div>
+            
+            <!-- Ventana emergente del carrito -->
+            <div id="cart-popup" class="cart-popup hidden">
+                <div class="cart-popup-content">
+                    <span class="close-cart" id="close-cart">&times;</span>
+                    <h2>Carrito de Compras</h2>
+                    <ul id="cart-items">
+                        <!-- Aquí se mostrarán los productos -->
+                    </ul>
+                    <div class="cart-total">
+                        <p><strong>Total:</strong> <span id="cart-total-price">S/ 0.00</span></p>
+                    </div>
+                    <a href="pagos.html" class="checkout-btn" id="checkout-btn">Comprar</a>
+
+
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar-menu">
+        <div class="user-info">
+            <img src="img principal/sesion.png" alt="User Icon" class="profile-icon">
+            <span>Admin</span>
+            <p href="sesion/login.html">Iniciar Sesión</p>
+        </div>
+        <ul class="menu-options">
+            <li><a href="index.html"><i class="icon-home"></i>Home</a></li>
+            <li class="dropdown-productos">
+                <a href="#"><i class="icon-productos"></i>Productos</a>
+                <!-- Submenú para Productos -->
+                <ul class="submenu">
+                    <li><a href="contenido/Tarjetas Gráficas.html">Tarjetas Gráficas</a></li>
+                    <li><a href="contenido/Placas Madre.html">Placas Madre</a></li>
+                    <li><a href="contenido/Procesadores & Accesorios.html">Procesadores & Accesorios</a></li>
+                    <li><a href="contenido/Almacenamiento.html">Almacenamiento</a></li>
+                    <li><a href="contenido/Case & Fuentes.html">Case & Fuentes</a></li>
+                    <li><a href="contenido/Memorias Ram.html">Memorias Ram</a></li>
+                    <li><a href="contenido/Sistema de Refrigeracion.html">Sistema de Refrigeración</a></li>
+                    <li><a href="contenido/Grabadoras Pc.html">Grabadoras Pc</a></li>
+                    <li><a href="contenido/Estabilizadores -UPS- Supresor.html">Estabilizadores -UPS- Supresor</a></li>
+                    <li><a href="contenido/Accesorios para Pc.html">Accesorios para Pc</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="icon-ofertas"></i>Ofertas</a></li>
+            <li><a href="calculadora/calculadora.html"><i class="icon-ordenes"></i>Calculadora</a></li>
+            <li><a href="metodo_de_pago.html"><i class="icon-reportes"></i>Metodos de Pago</a></li>
+            <li><a href="#"><i class="icon-ajustes"></i>Ajustes</a></li>
+        </ul>
+        <div class="logout">
+            <a href="#"><i class="icon-logout"></i></a>
+        </div>
+    </div>
+    <!-- Sección de Productos -->
+    <section class="content-section">
+        <!-- Artwork Section -->
+        <div class="products-grid">
+            <div class="product-item">
+                <!-- Imagen principal -->
+                <img src="https://cyccomputer.pe/50394-medium_default/asus-rog-ryuo-iii-240-black-argb-refrigeracion-liquido-amdintel-pn90rc00j1-m0aay0.jpg" alt="ASUS ROG RYUO III 240" class="main-image">
+                <img src="https://cyccomputer.pe/50396-medium_default/asus-rog-ryuo-iii-240-black-argb-refrigeracion-liquido-amdintel-pn90rc00j1-m0aay0.jpg" alt="ASUS ROG RYUO III 240 en hover" class="hover-image">
+                <div class="product-details">
+                    <h3>ASUS ROG RYUO III 240 BLACK ARGB</h3>
+                    <p>REFRIGERACION LIQUIDA AMD/INTEL<br>(PN:90RC00J1-M0AA0Y0)</p>
+                    <p>Stock: 4 Artículos<br>Marca: ASUS</p>
+                    <p class="discount" style="color: red; font-weight: bold;">-$16.00</p>
+                    <p class="price">
+                        <span style="text-decoration: line-through;">$292.00 (S/ 1,097.92)</span><br>
+                        $276.00 (S/ 1,037.76)
+                    </p>
+                    <button class="buy-btn">Comprar</button>
+                </div>
+            </div>
+        
+            <div class="product-item">
+                <img src="https://cyccomputer.pe/56064-medium_default/monitor-led-27-samsung-ls27cg552elxpe-odyssey-g5-curvo-2560x1440-hdmi-dp-1ms165hzfreesync-.jpg" alt="Monitor Samsung" class="main-image">
+                <img src="https://cyccomputer.pe/56066-medium_default/monitor-led-27-samsung-ls27cg552elxpe-odyssey-g5-curvo-2560x1440-hdmi-dp-1ms165hzfreesync-.jpg" alt="Monitor Samsung en hover" class="hover-image">
+                <div class="product-details">
+                    <h3>MONITOR LED 27" SAMSUNG LS27CG552ELXPE ODYSSEY G5 CURVO</h3>
+                    <p>2560x1440 HDMI DP 1MS/165Hz/FREESYNC</p>
+                    <p>Stock: 7 Artículos<br>Marca: SAMSUNG</p>
+                    <p class="discount" style="color: red; font-weight: bold;">-$21.00</p>
+                    <p class="price">
+                        <span style="text-decoration: line-through;">$290.00 (S/ 1,090.44)</span><br>
+                        $269.00 (S/ 1,011.44)
+                    </p>
+                    <button class="buy-btn">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <img src="https://cyccomputer.pe/42888-medium_default/forza-fsp-4412usb-supresor-de-pico-4-tomas-4-puertos-usb.jpg" alt="Forza FSP" class="main-image">
+                <img src="https://cyccomputer.pe/42889-medium_default/forza-fsp-4412usb-supresor-de-pico-4-tomas-4-puertos-usb.jpg" alt="Forza FSP en hover" class="hover-image">
+                <div class="product-details">
+                    <h3>FORZA FSP-4412USB SUPRESOR DE PICO</h3>
+                    <p>4 TOMAS + 4 PUERTOS USB</p>
+                    <p>Stock: Mayor a 10 Artículos<br>Marca: FORZA</p>
+                    <p class="discount" style="color: red; font-weight: bold;">-28.57%</p>
+                    <p class="price">
+                        <span style="text-decoration: line-through;">$21.00 (S/ 78.96)</span><br>
+                        $15.00 (S/ 56.40)
+                    </p>
+                    <button class="buy-btn">Comprar</button>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <img src="https://cyccomputer.pe/57103-medium_default/monitor-led-27-lg-27bk550y-b-1920x1080-hdmi-dp-vga-5ms75hz-.jpg" alt="Monitor LG" class="main-image">
+                <img src="https://cyccomputer.pe/57106-medium_default/monitor-led-27-lg-27bk550y-b-1920x1080-hdmi-dp-vga-5ms75hz-.jpg" alt="Monitor LG en hover" class="hover-image">
+                <div class="product-details">
+                    <h3>MONITOR LED 27" LG 27BK550Y-B</h3>
+                    <p>1920x1080 HDMI DP VGA 5MS/75Hz</p>
+                    <p>Stock: Mayor a 10 Artículos<br>Marca: LG</p>
+                    <p class="discount" style="color: red; font-weight: bold;">-$11.00</p>
+                    <p class="price">
+                        <span style="text-decoration: line-through;">$180.00 (S/ 676.80)</span><br>
+                        $169.00 (S/ 635.44)
+                    </p>
+                    <button class="buy-btn">Comprar</button>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <div class="hero-wrapper">
+        <section class="hero">
+            <button class="arrow left-arrow" aria-label="Previous Slide">&lt;</button>
+            <div class="slides">
+                <div class="hero-content active">
+                    <div class="hero-text">
+                        <h1>Tarjeta de video</h1>
+                        <p>ZOTAC GAMING GEFORCE RTX 4060 8GB GDDR6 128BITS TWIN EDGE OC.</p>
+                        <a href="#" class="read-more">$ 340,00 (S/ 1.278,40) $ 368,00 (S/ 1.383,68)</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://www.zotac.com/download/files/page/4060/1.png" alt="Raiden Shogun">
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Placa base</h1>
+                        <p>PLACA ASROCK Z590 TAICHI DDR4 LGA 1200</p>
+                        <a href="#" class="read-more">$ 399,01 (S/ 1.500,28) $ 586,00 (S/ 2.203,36)</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://asrock.com/mb/photo/Z590%20Taichi(M1).png" alt="Another Image">
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Mouse Gaming RGB</h1>
+                        <p>G1 6,400 MAX DPI｜RGB LIGHTING｜CLASSIC DESIGN</p>
+                        <a href="#" class="read-more">S/ 75.00</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="img principal/mouse.png" alt="Mouse Gaming RGB">
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Monitor Gaming HD</h1>
+                        <p>Odyssey G7 de 28". UHD, 144Hz, 1ms (GtG)</p>
+                        <a href="#" class="read-more">S/ 899.00</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="img principal/monitor.png" alt="Monitor Full HD 144Hz">
+                    </div>
+                </div>
+            </div>
+            <button class="arrow right-arrow" aria-label="Next Slide">&gt;</button>
+            <div class="dots-container">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+            </div>
+        </section>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
